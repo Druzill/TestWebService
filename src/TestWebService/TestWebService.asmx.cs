@@ -25,7 +25,7 @@ namespace TestWebService
 
         [WebMethod]
         [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
-        public int Fibonacci(int n)
+        public string Fibonacci(int n)
         {
             try
             {

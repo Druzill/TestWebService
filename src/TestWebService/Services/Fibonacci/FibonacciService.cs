@@ -1,4 +1,5 @@
-﻿using log4net;
+﻿using System.Numerics;
+using log4net;
 using TestWebService.Services.Core;
 
 namespace TestWebService.Services.Fibonacci
@@ -19,26 +20,26 @@ namespace TestWebService.Services.Fibonacci
 
         #region IFibonacciService Members
 
-        int IFibonacciService.Fibonacci(int n)
+        string IFibonacciService.Fibonacci(int n)
         {
             // Check the input
             if (n < 1 || n > 100)
             {
                 Logger.Error(string.Format("Invalid Argument : {0}", n));
-                return -1;
+                return "-1";
             }
 
-            int a = 0;
-            int b = 1;
+            BigInteger a = 0;
+            BigInteger b = 1;
 
             // In N steps compute Fibonacci sequence iteratively.
-            for (int i = 0; i < n; i++)
+            for (var i = 0; i < n; i++)
             {
-                int temp = a;
+                BigInteger temp = a;
                 a = b;
                 b = temp + b;
             }
-            return a;
+            return a.ToString();
         }
 
         #endregion      
