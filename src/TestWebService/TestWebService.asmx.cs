@@ -39,7 +39,7 @@ namespace TestWebService
             {
                 // Should not go here ...
                 _logger.Error("Unexpected error : ", ex);
-                throw new SoapException("Fault occurred", SoapException.ClientFaultCode);
+                throw new SoapException("Fault occurred", SoapException.ServerFaultCode);
             }
         }
 
@@ -58,7 +58,7 @@ namespace TestWebService
             {
                 // Should not go here ...
                 _logger.Error("Unexpected error : ", ex);
-                throw new SoapException("Fault occurred", SoapException.ClientFaultCode);
+                throw new SoapException("Fault occurred", SoapException.ServerFaultCode);
             }
         }
 
